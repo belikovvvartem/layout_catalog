@@ -7,14 +7,15 @@ $pad-vert: 50px;
 $pad-horiz: 40px;
 $gap-row: 48px;
 $gap-col: 46px;
-$transition-duration: 300ms;
 $white: #fff;
+$transition-duration: 0.3s;
+
 
 
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background-color: #fff;
+  background-color: $white;
 }
 
 .header {
@@ -22,7 +23,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  background: #fff;
+  background: $white;
 
   &__logo img {
     height: 40px;
@@ -83,6 +84,8 @@ body {
   padding: 16px;
   text-align: center;
   transition: transform $transition-duration;
+  position: relative;
+  transform-origin: center;
 
 
   &__img {
@@ -93,7 +96,7 @@ body {
   &__title {
     font-size: 14px;
     margin: 12px 0;
-    transition: color 0.3s;
+    transition: color $transition-duration;
   }
 
   &__code {
@@ -120,7 +123,7 @@ body {
     width: 100%;
     padding: 10px 0;
     background: $hover-color;
-    color: #fff;
+    color: $white;
     text-decoration: none;
     transition: background $transition-duration, color $transition-duration;
 
@@ -134,10 +137,9 @@ body {
   }
 
   &:hover {
-    position: relative;
-    transform-origin: center center;
-    transform: scale(1.2);
     z-index: 10;
+    transform: scale(1.2);
+
 
     .card__title {
       color: $title-hover;
